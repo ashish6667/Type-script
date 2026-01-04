@@ -58,11 +58,36 @@ class ModernCoffee {
     }
 
     set sugar(level: number){
-        this._sugar = level;
+        if(level < 0) throw new Error("Too sweet")
+        this._sugar = level
     }
 }
 
+class EkspresCoffee {
+    static shopName = "Modern Coffee Shop"
 
-const myCoffee = new Coffee()
+    constructor(public flavor: string){}
+}
+console.log(EkspresCoffee.shopName);
 
+abstract class Drink {
+    abstract make(): void
+}
 
+class myCoffee extends Drink {
+    make()  {
+        console.log("Making coffee");
+    }
+}
+
+class Heater{
+    heat(){}
+}
+
+class ChaiMaker{
+    constructor(private heater: Heater){}
+
+    make(){
+        this.heater.heat
+    }
+}

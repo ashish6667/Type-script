@@ -4,9 +4,7 @@ interface CoffeProps {
     isSpecial: boolean;
 }
 
-export function Coffe({name, price, isSpecial}: {name: string, price: string, isSpecial: boolean}
-    : CoffeProps
-) {
+export function Coffe({name, price, isSpecial}: CoffeProps) {
     return (
         <article>
         <h2>
